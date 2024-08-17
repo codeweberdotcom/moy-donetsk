@@ -9,7 +9,15 @@ $getShop = $Shop->getUserShop($value["ads_id_user"]);
 ?>
 <div class="<?php if($settings["home_sidebar_status"]){ echo 'col-lg-3 col-md-3 col-sm-6 col-6'; }else{ echo 'col-lg-2 col-md-3 col-sm-3 col-6'; } ?>" >
   <div class="item-grid" title="<?php echo $value["ads_title"]; ?>" >
+	  
+	  <?php if($getShop['clients_shops_title']){ ?>
+     
+<?php }; ?>
+	  
      <div class="item-grid-img" >
+		  <?php if($getShop['clients_shops_title']){ ?>
+      <a href="<?php echo $Profile->userLink($value); ?>" title="<?php echo $getShop['clients_shops_title']; ?>" class="mini-avatar position-absolute bottom-0 d-flex flex-column-reverse right-0 p-2 z-index-1" > <span class="mini-avatar-img shadow" ><img src="<?php echo $Profile->userAvatar($value); ?>" /></span> </a>
+<?php }; ?>
      <a href="<?php echo $Ads->alias($value); ?>" title="<?php echo $value["ads_title"]; ?>" target="_blank" >
 
        <div class="item-labels" >
@@ -18,6 +26,10 @@ $getShop = $Shop->getUserShop($value["ads_id_user"]);
 
        <?php echo $Ads->CatalogOutAdGallery($images, $value); ?>
 
+		 <?php  if (strpos($value["ads_filter_tags"], "Предзаказ") !== false) {
+            ?><span class="user-card-verification-status position-absolute predzakaz">Предзаказ</span><?php
+         } ?>
+		 
      </a>
      <?php echo $Ads->adActionFavorite($value, "catalog", "item-grid-favorite"); ?>
      </div>

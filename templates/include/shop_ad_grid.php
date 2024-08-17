@@ -16,6 +16,10 @@ $getShop = $Shop->getUserShop( $value["ads_id_user"] );
        </div>
 
        <?php echo $Ads->CatalogOutAdGallery($images, $value); ?>
+		 
+		 <?php  if (strpos($value["ads_filter_tags"], "Предзаказ") !== false) {
+            ?><span class="user-card-verification-status position-absolute predzakaz">Предзаказ</span><?php
+         } ?>
 
      </a>
      <?php echo $Ads->adActionFavorite($value, "catalog", "item-grid-favorite"); ?>
