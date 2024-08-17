@@ -109,7 +109,7 @@
             <div class="dialog-content-item-box" >       
 		            <div class="dialog-content-flex" >
 				   	  	  <div class="dialog-content-circle-img" >
-				   	  	  	<img src="<?php echo $settings["logotip"]; ?>">
+				   	  	  	<img src="<?php echo $settings["logotip-mobile"]; ?>">
 				   	  	  </div>
 			   	  	  </div>
 			   	  	  <div class="dialog-content-msg" >
