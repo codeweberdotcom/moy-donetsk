@@ -21,3 +21,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule .* index.php [L]
+	
+	Redirect 301 /donetsk/dlya-biznesa/delovye-uslugi https://moy-donetsk.ru/donetsk/uslugi/delovye-uslugi
+
+
+RewriteCond %{HTTP_USER_AGENT} (GeedoProductSearch|SemrushBot|GPTBot|GeedoBot|Amazonbot|Bytespider|SeopultContentAnalyzer|SeekportBot|DataForSeoBot|Barkrowler|BLEXBot|SemrushBot|MJ12bot|AhrefsBot|bingbot|DotBot|PetalBot|LinkpadBot|SputnikBot|statdom.ru|MegaIndex.ru|WebDataStats|Jooblebot|Baiduspider|BackupLand|NetcraftSurveyAgent|openstat.ru|thesis-research-bot|fidget-spinner-bot|facebookexternalhit|GPTBot) [NC]
+RewriteRule .* - [F,L]
