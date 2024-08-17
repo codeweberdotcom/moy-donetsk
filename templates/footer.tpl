@@ -13,7 +13,7 @@
 
           <div class="row" >
              <div class="col-lg-4" >
-               <label>
+              <label class="mobile-label-menu-category">
                   <?php echo $ULang->t("Город или регион"); ?>                             
                </label>
              </div>
@@ -77,25 +77,7 @@
                             <div class="custom-results SearchMetroResults" style="display: none;"></div>
                           </div>
 
-                          <div class="ads-container-metro-station">
-                            <?php
-                                if( isset($_GET['filter']['metro']) ){
-                                    $getMetro = getAll("select * from uni_metro where id IN(".implode(',',$_GET['filter']['metro']).")");
-
-                                    if(count($getMetro)){
-                                      foreach ($getMetro as $key => $value) {
-                                        $main = findOne("uni_metro", "id=?", [$value["parent_id"]]);
-                                        if($main){
-                                          echo '
-                                                 <span><i style="background-color:'.$main["color"].';"></i>'.$value["name"].' <i class="las la-times ads-metro-delete"></i><input type="hidden" value="'.$value["id"].'" name="filter[metro][]"></span>
-                                          ';
-                                          }
-                                      }
-                                    }
-                                }
-                            ?>
-                          </div>
-
+                         
                       <?php
                       }
                     ?>
@@ -112,7 +94,7 @@
           <?php if(count($getCategoryBoard["category_board_id_parent"][0])){ ?>
           <div class="row" >
              <div class="col-lg-4" >
-               <label>
+                <label class="mobile-label-menu-category">
                   <?php echo $ULang->t("Категория"); ?>                             
                </label>
              </div>
@@ -135,7 +117,7 @@
 
                      <div class="uni-select-name" data-name="<?php echo $ULang->t("Не выбрано"); ?>" > <span><?php echo $ULang->t("Не выбрано"); ?></span> <i class="la la-angle-down"></i> </div>
                      <div class="uni-select-list" >
-                         <label> <input type="radio" class="modal-filter-select-category" value="0" > <span><?php echo $ULang->t("Все категории"); ?></span> <i class="la la-check"></i> </label>
+                          <label class="mobile-label-menu-category"> <input type="radio" class="modal-filter-select-category" value="0" > <span><?php echo $ULang->t("Все категории"); ?></span> <i class="la la-check"></i> </label>
                          <?php
                          foreach ($getCategoryBoard["category_board_id_parent"][0] as $value) {
                             ?>
@@ -162,7 +144,7 @@
 
                                      <div class="uni-select-name" data-name="<?php echo $ULang->t("Не выбрано"); ?>" > <span><?php echo $ULang->t("Не выбрано"); ?></span> <i class="la la-angle-down"></i> </div>
                                      <div class="uni-select-list" >
-                                         <label> <input type="radio" class="modal-filter-select-category" value="<?php echo $id_main_cat; ?>" > <span><?php echo $ULang->t("Все категории"); ?></span> <i class="la la-check"></i> </label>
+                                          <label class="mobile-label-menu-category"> <input type="radio" class="modal-filter-select-category" value="<?php echo $id_main_cat; ?>" > <span><?php echo $ULang->t("Все категории"); ?></span> <i class="la la-check"></i> </label>
                                          <?php
                                          foreach ($getCategoryBoard["category_board_id_parent"][$id_main_cat] as $value) {
                                             ?>
@@ -199,7 +181,7 @@
                   ?>
                   <div class="row" >
                      <div class="col-lg-4" >
-                       <label>
+                       <label class="mobile-label-menu-category">
                           <?php 
                           if( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_variant_price"] == 1 ){
                             echo $ULang->t('Зарплата'); 
@@ -224,7 +206,7 @@
                   ?>
                   <div class="row" >
                      <div class="col-lg-4" >
-                       <label>
+                        <label class="mobile-label-menu-category">
                           <?php echo $ULang->t("Цена"); ?>                             
                        </label>
                      </div>
@@ -244,7 +226,7 @@
 
               <div class="row mt15" >
                  <div class="col-lg-4" >
-                   <label>
+                    <label class="mobile-label-menu-category">
                       <?php echo $ULang->t("Статус"); ?>                             
                    </label>
                  </div>
@@ -273,10 +255,7 @@
                       </div>
                       <?php } ?>
                       
-                      <div class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" name="filter[vip]" <?php if($data["param_filter"]["filter"]["vip"]){ echo 'checked=""'; } ?> id="mobileflvip" value="1" >
-                          <label class="custom-control-label" for="mobileflvip"><?php echo $ULang->t("VIP объявление"); ?></label>
-                      </div>
+                      
 
                         <?php if( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_booking"] ){ ?>
 
@@ -314,7 +293,7 @@
 
                       <div class="row mt15 mb15" >
                          <div class="col-lg-4" >
-                           <label>
+                           <label class="mobile-label-menu-category">
                               <?php echo $ULang->t("Даты"); ?>                             
                            </label>
                          </div>
@@ -332,7 +311,7 @@
 
                       <div class="row mt15 mb15" >
                          <div class="col-lg-4" >
-                           <label>
+                            <label class="mobile-label-menu-category">
                               <?php echo $ULang->t("Даты"); ?>                             
                            </label>
                          </div>
@@ -358,7 +337,7 @@
 
           <div class="row mt15" >
              <div class="col-lg-4" >
-               <label>
+                <label class="mobile-label-menu-category">
                   <?php echo $ULang->t("Срок размещения"); ?>                             
                </label>
              </div>
@@ -439,7 +418,7 @@
        }elseif($settings["bonus_program"]["register"]["status"]){
          ?>
          <div class="mobile-fixed-menu-content-card-user" >
-             <h6><?php echo $ULang->t("Зарегистрируйтесь на нашем сайте"); ?></h6>
+             <div class="h6"><?php echo $ULang->t("Зарегистрируйтесь на нашем сайте"); ?></div>
              <p><?php echo $ULang->t("и получите"); ?> <strong><?php echo $Main->price($settings["bonus_program"]["register"]["price"]); ?></strong> <?php echo $ULang->t("на свой бонусный счет!"); ?></p>
              <a class="card-user-link-profile" href="<?php echo _link("auth"); ?>" ><?php echo $ULang->t("Войти или зарегистрироваться"); ?></a>
          </div>
@@ -447,7 +426,7 @@
        }else{
          ?>
          <div class="mobile-fixed-menu-content-card-user" >
-             <h6><?php echo $ULang->t("Личный кабинет"); ?></h6>
+            <div class="h6"><?php echo $ULang->t("Личный кабинет"); ?></div>
              <div><span class="medium-avatar-img" ><i class="las la-user"></i></span></div>
              <a href="<?php echo _link("auth"); ?>" ><?php echo $ULang->t("Войти или зарегистрироваться"); ?></a>
          </div>
@@ -519,7 +498,7 @@
 
       <span class="sidebar-cart-close" ><i class="las la-times"></i></span>
 
-      <h5><?php echo $ULang->t("Корзина товаров"); ?></h5>
+      <div class="h5"><?php echo $ULang->t("Корзина товаров"); ?></div>
       <p class="cart-info" ></p>
 
     </div>
@@ -542,7 +521,7 @@
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
       <div class="modal-cart-header" >
-          <h5><?php echo $ULang->t("Корзина товаров"); ?></h5>
+          <div class="h5"><?php echo $ULang->t("Корзина товаров"); ?></div>
           <p class="cart-info" ></p>        
       </div>
 
@@ -561,7 +540,7 @@
       <div class="modal-notification-content" >
           <i class="las la-check"></i>
 
-          <h4 class="modal-notification-text" ><?php echo $ULang->t("Товар успешно добавлен"); ?></h4>            
+          <div class="modal-notification-text h4" ><?php echo $ULang->t("Товар успешно добавлен"); ?></div>            
       </div>
 
       <div class="mt20" ></div>
@@ -589,7 +568,7 @@
       <div class="modal-notification-content" >
           <i class="las la-check"></i>
 
-          <h4 class="modal-notification-text" ><?php echo $ULang->t("Заказ успешно создан!"); ?></h4>            
+          <div class="modal-notification-text h4" ><?php echo $ULang->t("Заказ успешно создан!"); ?></div>            
       </div>
 
       <div class="mt20" ></div>
@@ -610,7 +589,7 @@
 
    <span class="mobile-box-register-bonus-close" ><i class="las la-times"></i></span>
    
-   <h5><?php echo $ULang->t("Зарегистрируйтесь на нашем сайте"); ?></h5>
+   <div class="h5"><?php echo $ULang->t("Зарегистрируйтесь на нашем сайте"); ?></div>
 
    <p><?php echo $ULang->t("и получите"); ?> <strong><?php echo $Main->price($settings["bonus_program"]["register"]["price"]); ?></strong> <?php echo $ULang->t("на свой бонусный счет!"); ?></p>
 
@@ -717,7 +696,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       <div class="modal-notification-content" >
           <i class="las la-check"></i>
 
-          <h4 class="modal-notification-text" ></h4>            
+          <div class="modal-notification-text h4" ></div>            
       </div>
 
     </div>
@@ -728,7 +707,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-      <h4 style="color: red;" > <strong><?php echo $ULang->t("Ваш аккаунт заблокирован!"); ?></strong> </h4>
+      <div class="h4" style="color: red;" > <strong><?php echo $ULang->t("Ваш аккаунт заблокирован!"); ?></strong> </div>
 
       <div class="mt30" ></div>
 
@@ -750,7 +729,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-      <h4 style="color: red;" > <strong><?php echo $ULang->t("Ваш аккаунт удален!"); ?></strong> </h4>
+      <div class="h4" style="color: red;" > <strong><?php echo $ULang->t("Ваш аккаунт удален!"); ?></strong> </div>
 
       <div class="mt30" ></div>
 
@@ -772,11 +751,11 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
         <span class="circle-icon" > <i class="las la-wallet"></i> </span>
       </div>
 
-      <h4 class="text-center" > <strong><?php echo $ULang->t("Недостаточно средств для оплаты!"); ?></strong> </h4>
+      <div class="text-center h4" > <strong><?php echo $ULang->t("Недостаточно средств для оплаты!"); ?></strong> </div>
 
       <div class="mt30" ></div>
 
-      <h6 class="text-center" ><?php echo $ULang->t("Ваш баланс"); ?> <strong class="modal-balance-summa" ></strong> </h6>
+      <div class="text-center h6" ><?php echo $ULang->t("Ваш баланс"); ?> <strong class="modal-balance-summa" ></strong> </div>
 
       <div class="mt30" ></div> 
 
@@ -800,7 +779,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
         <span class="circle-icon" > <i class="las la-check"></i> </span>
       </div>
 
-      <h4 class="text-center" > <strong><?php echo $ULang->t("Услуга успешно подключена!"); ?></strong> </h4>
+      <div class="text-center h4" > <strong><?php echo $ULang->t("Услуга успешно подключена!"); ?></strong> </div>
 
       <div class="mt30" ></div> 
 
@@ -831,7 +810,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
       
       <div class="modal-confirm-content" >
-          <h4><?php echo $ULang->t("Вы действительно хотите удалить диалог?"); ?></h4>            
+          <div class="h4"><?php echo $ULang->t("Вы действительно хотите удалить диалог?"); ?></div>            
       </div>
 
       <div class="mt30" ></div>
@@ -854,7 +833,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
       
       <div class="modal-confirm-content" >
-          <h4><?php echo $ULang->t("Внести пользователя в чёрный список?"); ?></h4>    
+          <div class="h4"><?php echo $ULang->t("Внести пользователя в чёрный список?"); ?></div>    
           <p class="mt15" ><?php echo $ULang->t("Пользователь не сможет писать вам в чатах и оставлять комментарии к объявлениям."); ?></p>        
       </div>
 
@@ -881,7 +860,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       
       <form method="post" class="modal-complaint-form" > 
 
-           <h4><?php echo $ULang->t("Сообщить о нарушении"); ?></h4>
+           <div class="h4"><?php echo $ULang->t("Сообщить о нарушении"); ?></div>
 
            <div class="textarea-custom mt20" >
 
@@ -900,7 +879,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 
       <div class="modal-complaint-notification" >
           <i class="las la-check"></i>
-          <h4></h4>
+          <div class="h4"></div>
       </div> 
 
       </div>
@@ -914,7 +893,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 
         <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-        <h4><?php echo $ULang->t("Пункты получения"); ?></h4> 
+        <div class="h4"><?php echo $ULang->t("Пункты получения"); ?></div> 
 
         <div class="container-custom-search" >
           <input type="text" autocomplete="nope" class="form-control mt15 action-input-search-delivery-city" placeholder="Город" >
@@ -999,7 +978,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
       
       <div class="modal-confirm-content" >
-          <h4><?php echo $ULang->t("Вы действительно хотите удалить сторис?"); ?></h4>         
+          <div class="h4"><?php echo $ULang->t("Вы действительно хотите удалить сторис?"); ?></div>         
       </div>
 
       <div class="mt30" ></div>
@@ -1075,9 +1054,245 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 </div>
 <?php } ?>
 
+
+
 <div class="footer-bg" >
 
 <footer>
+
+
+<div class="container catalog-subcategory mb15 mt25">
+<h4 class="mb20 mt20"> <strong> Объявления в других городах </strong> </h4>
+    <div class="row">
+	 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/donetsk">Донецк</a>
+        </div>
+		    
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/mariupol">Мариуполь</a>
+        </div>
+		
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/makeevka">Макеевка</a>
+        </div>
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/gorlovka">Горловка</a>
+        </div>
+		
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/debalcevo">Дебальцево</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/dokuchaevsk">Докучаевск</a>
+        </div>
+		
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/zhdanovka">Ждановка</a>
+        </div>
+        
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/marinka">Марьинка</a>
+        </div>
+
+        	        
+		   <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/harcyzsk">Харцызск</a>
+        </div>
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/zugres">Зугрэс</a>
+        </div>
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/amvrosievka">Амвросиевка</a>
+        </div>
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/shahtersk">Шахтёрск</a>
+        </div>
+				<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/snezhnoe">Снежное</a>
+        </div>
+				<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/torez">Торез</a>
+        </div>
+		
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/yasinovataya">Ясиноватая</a>
+        </div>
+		
+		
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/avdeevka">Авдеевка</a>
+        </div>
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/volnovaha">Волноваха</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/volodarskoe">Володарское</a>
+        </div>
+		 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/novoazovsk">Новоазовск</a>
+        </div>
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/melekino">Мелекино</a>
+        </div>	
+		 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/mangush">Мангуш</a>
+        </div>
+        
+        
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/avilo-uspenka">Авило-Успенка</a>
+        </div>
+
+		
+		 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/starobeshevo">Старобешево</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/telmanovo">Тельманово</a>
+        </div>
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/kurahovo">Курахово</a>
+        </div>
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/svetlodarsk">Светлодарск</a>
+        </div>
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/selidovo">Селидово</a>
+        </div>
+		     
+		
+		
+		
+		 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/babah-tarama">Бабах-Тарама</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/aleksandrovka">Александровка</a>
+        </div>
+		<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/berdyansk">Бердянск</a>
+        </div>
+		
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/bahmut">Бахмут</a>
+        </div>
+		    <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/lugansk">Луганск</a>
+        </div>
+       
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/belickoe">Белицкое</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/belosarayskaya-kosa">Белосарайская коса</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/belozerskoe">Белозёрское</a>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/bunge">Бунге</a>
+        </div>
+        
+<div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/kramatorsk">Краматорск</a>
+        </div>
+		        
+		        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/melitopol">Мелитополь</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/gornyak">Горняк</a>
+        </div>
+        
+       
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/dobropole">Доброполье</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/druzhkovka">Дружковка</a>
+        </div>
+        
+        
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/zaliznoe">Зализное</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/zaporozhe">Запорожье</a>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/kalmiusskoe">Кальмиусское</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/konstantinovka">Константиновка</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/krestovka">Крестовка</a>
+        </div>
+
+		
+       
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/mirnograd">Мирноград</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/mirnoe">Мирное</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/mospino">Моспино</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/nikolaevka">Николаевка</a>
+        </div>
+       
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/novogrodovka">Новогродовка</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/pokrovsk">Покровск</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/rodinskoe">Родинское</a>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/seversk">Северск</a>
+        </div>
+
+        
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/soledar">Соледар</a>
+        </div>
+       
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/talakovka">Талаковка</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/toreck">Торецк</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/uglegorsk">Углегорск</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/ugledar">Угледар</a>
+        </div>
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/ukrainsk">Украинск</a>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/chasov-yar">Часов Яр</a>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-4 col-sm-4">
+            <a href="/yurevka">Юрьевка</a>
+        </div>
+    </div>
+</div>
+
+
    <div class="container" >
    <div class="row" >
 
@@ -1089,7 +1304,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       
         <div class="footer-list-link" >
           <a href="<?php echo _link("rules"); ?>"><?php echo $ULang->t("Правила сервиса"); ?></a>
-          <a href="<?php echo _link("polzovatelskoe-soglashenie"); ?>"><?php echo $ULang->t("Пользовательское соглашение"); ?></a>
+          <a href="<?php echo _link("oferta-o-zaklyuchenii-dogovora-s-moy-doneck"); ?>"><?php echo $ULang->t("Договор оферты"); ?></a>
           <a href="<?php echo _link("feedback"); ?>"><?php echo $ULang->t("Служба поддержки"); ?></a>
         </div>
 
