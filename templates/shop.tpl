@@ -46,14 +46,15 @@
             
             <?php if( count($data["shop_sliders"]) ){ ?>
             <div class="shop-sliders-items" >
-
                <?php
                   foreach ($data["shop_sliders"] as $key => $value) {
                      ?>
-                     <div style="background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.24) 75%, rgba(0, 0, 0, 0.64)), url(<?php echo $config["urlPath"] . "/" . $config["media"]["user_attach"] . "/" . $value["clients_shops_slider_image"]; ?>); height: 450px; width: 100%; background-position: center center; background-size: cover;" ></div>
+                     <div style="background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.64)), url(<?php echo $config["urlPath"] . "/" . $config["media"]["user_attach"] . "/" . $value["clients_shops_slider_image"]; ?>); height: 450px; width: 100%; background-position: center center; background-size: cover;" ></div>
                      <?php
                   }
                ?>
+
+
 
             </div>
             <?php } ?>
@@ -215,6 +216,9 @@
 
             if( $_SESSION["profile"]["id"] == $data["shop"]["clients_shops_id_user"] ){
               ?>
+			  
+
+
               <div class="shop-list-pages" >
               <a href="#" class="open-modal link-shop-add-page" data-id-modal="modal-shop-add-page" ><?php echo $ULang->t("Добавить страницу"); ?></a>
               </div>
@@ -234,6 +238,7 @@
                 <div class="row" >
                    <div class="col-lg-9" >
                      <h1 class="catalog-title" id="catalog-results" ><?php echo $data["h1"]; ?></h1>
+
                    </div>
                    <div class="col-lg-3 text-right" >
                      <div class="catalog-sort" >
