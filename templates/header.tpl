@@ -322,7 +322,7 @@
                                       if((new Ads)->getCountChangeOptionsCity( $data )){ echo '<span class="city-option-count" >'.(new Ads)->getCountChangeOptionsCity( $data ).'</span>'; }
                                   ?>                                    
                               </div>
-                              <?php } ?>
+                          <?php } ?>
                           </div>
 
                           <div class="sticky-search-control-geo-area" >
@@ -450,7 +450,7 @@
 
                     <?php if( !$_SESSION['profile']['id'] ){ ?>
                     <div class="toolbar-link mr8" >
-                       <a href="<?php echo _link('auth'); ?>" class="header-wow-sticky-auth"><?php echo $ULang->t("Войти"); ?></a>
+                       <a href="<?php echo _link('auth'); ?>" class="header-wow-sticky-auth btn-custom btn-color-green"><?php echo $ULang->t("Войти"); ?></a>
                     </div>
                     <?php }else{ ?>
                     <div class="toolbar-link toolbar-link-profile mr12" >
@@ -483,10 +483,23 @@
 </header>
 
 <header class="header-wow-mobile d-block d-lg-none <?php if( $route_name == "catalog" || $route_name == "index" ){ echo 'height200'; }else{ echo 'height55'; } ?>" <?php if($route_name == "map"){ echo 'style="margin-bottom:0px;"'; } ?> >
-   
-<div class="header-wow-mobile-sticky" >
-   <div class="header-wow-mobile-top parents-ajax-live-search" >
+ 
 
+<div class="header-wow-mobile-sticky" >
+<div class="header-wow-mobile-top parents-ajax-live-search" style="height: 110px;">
+<div class="container">
+<div class="header-flex-box py-2 align-items-center" >
+<div class="logo-mobile">
+<a href="https://moy-donetsk.ru"><img style="height: 35px;" src="<?php echo $settings["logotip"]; ?>" data-inv="<?php echo $settings["logo_color_inversion"]; ?>" alt="<?php echo $ULang->t($settings["title"]); ?>"></a>
+</div>
+
+<a href="<?php echo _link("ad/create"); ?>" class="btn-custom-mini btn-color-blue">
+   <span><?php echo $ULang->t("Разместить"); ?></span>
+</a>
+
+
+</div>
+</div>
       <div class="container" >
          <div class="header-flex-box" >   
              <div class="header-flex-box-mobile-1" >
@@ -662,7 +675,7 @@
        <div class="header-wow-mobile-category-slider" >
 
            <div>
-               <a class="header-wow-mobile-all-category mobile-fixed-menu_all-category-open" >
+               <a class="header-wow-mobile-all-category mobile-fixed-menu_all-category-open shadow mobile-menu-items" >
                 
                 <div class="header-wow-mobile-all-category-image" >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="24" viewBox="0 0 24 24" width="24"><path clip-rule="evenodd" d="m5.49718 3.00617 4.50169-.00507c.55343 0 1.00113.44771 1.00113 1v5.99887c0 .55233-.4477 1.00003-1 1.00003h-6c-.55228 0-1-.4477-1-1.00003v-4.4938c0-1.37961 1.11757-2.49844 2.49718-2.5zm-1.49831 10.00173c-.55184.0006-.99887.4481-.99887 1v4.4921c0 1.3807 1.11929 2.5 2.5 2.5h4.5c.5523 0 1-.4477 1-1v-5.9989c0-.5523-.4477-1-1.00113-1zm10.00003 0c-.5519.0006-.9989.4481-.9989 1v5.9921c0 .5523.4477 1 1 1h4.5c1.3807 0 2.5-1.1193 2.5-2.5v-4.4989c0-.5523-.4477-1-1.0011-1zm0-10.00004c-.5519.00063-.9989.44816-.9989 1v5.99211c0 .55233.4477 1.00003 1 1.00003h6c.5523 0 1-.4477 1-1.00003v-4.49718c0-1.38071-1.1193-2.5-2.5028-2.5zm-8.9989 15.49214c0 .2761.22386.5.5.5h3.5v-3.9978l-4 .0045zm13.5.5h-3.5v-3.9933l4-.0045v3.4978c0 .2761-.2239.5-.5.5zm-9.5-10.00003v-3.99774l-3.50056.00394c-.27593.00031-.49944.22408-.49944.5v3.4938zm10 0h-4v-3.99323l3.5-.00395c.2761 0 .5.22386.5.5z" fill="currentColor" fill-rule="evenodd"></path></svg>
@@ -679,7 +692,7 @@
 
                    ?>
                    <div>
-                       <a href="<?php echo $CategoryBoard->alias($value["category_board_chain"]); ?>"  >
+                       <a class="mobile-menu-items shadow" href="<?php echo $CategoryBoard->alias($value["category_board_chain"]); ?>"  >
                         
                         <?php if( $value["category_board_image"] ){ ?>
                         <div class="header-wow-mobile-category-image" >
