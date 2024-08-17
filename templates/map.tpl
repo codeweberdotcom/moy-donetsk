@@ -74,12 +74,6 @@
             $.ajax({type: "POST",url: $("body").data("prefix") + "systems/ajax/controller.php",data: "action=ads/update_count_display",dataType: "json",cache: false});
          }
 
-         function formFilters(){
-            return $.param($(".modal-form-filter").serializeArray().filter(function(el) {
-                return $.trim(el.value);
-            }));  
-         }
-
          function loadOffers(ids,page){
 
               $(".map-search-offers-list").html(`
@@ -110,6 +104,12 @@
           var coorTopRight;
           var coorBottomLeft;
           var coorBottomRight;
+
+          function formFilters(){
+            return $.param($(".modal-form-filter").serializeArray().filter(function(el) {
+                return $.trim(el.value);
+            }));  
+          }
 
           function loadPoints(page=1){
 
@@ -225,7 +225,7 @@
 
           function loadPoints(page=1){
 
-              $.ajax({type: "POST",url: $("body").data("prefix") + "systems/ajax/controller.php",data: formFilters() + "&coorTopLeft=" + coorTopLeft + "&coorTopRight=" + coorTopRight + "&coorBottomLeft=" + coorBottomLeft + "&coorBottomRight=" + coorBottomRight + "&page=" + page + "&action=ads/load_points_map",dataType: "json",cache: false,                        
+              $.ajax({type: "POST",url: $("body").data("prefix") + "systems/ajax/controller.php",data: $(".modal-form-filter").serialize() + "&coorTopLeft=" + coorTopLeft + "&coorTopRight=" + coorTopRight + "&coorBottomLeft=" + coorBottomLeft + "&coorBottomRight=" + coorBottomRight + "&page=" + page + "&action=ads/load_points_map",dataType: "json",cache: false,                        
                 success: function (data){
 
                   if(data["total"]!=0){
@@ -378,7 +378,7 @@
               coorBottomLeft = southWest.lat;
               coorBottomRight = southWest.lng;
 
-              $.ajax({type: "POST",url: $("body").data("prefix") + "systems/ajax/controller.php",data: formFilters() + "&coorTopLeft=" + coorTopLeft + "&coorTopRight=" + coorTopRight + "&coorBottomLeft=" + coorBottomLeft + "&coorBottomRight=" + coorBottomRight + "&page=" + page + "&action=ads/load_points_map",dataType: "json",cache: false,                        
+              $.ajax({type: "POST",url: $("body").data("prefix") + "systems/ajax/controller.php",data: $(".modal-form-filter").serialize() + "&coorTopLeft=" + coorTopLeft + "&coorTopRight=" + coorTopRight + "&coorBottomLeft=" + coorBottomLeft + "&coorBottomRight=" + coorBottomRight + "&page=" + page + "&action=ads/load_points_map",dataType: "json",cache: false,                        
                 success: function (data){
 
                   if(data["total"]!=0){
