@@ -1304,7 +1304,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
       
         <div class="footer-list-link" >
           <a href="<?php echo _link("rules"); ?>"><?php echo $ULang->t("Правила сервиса"); ?></a>
-          <a href="<?php echo _link("oferta-o-zaklyuchenii-dogovora-s-moy-doneck"); ?>"><?php echo $ULang->t("Договор оферты"); ?></a>
+          <a href="<?php echo _link("polzovatelskoe-soglashenie"); ?>"><?php echo $ULang->t("Договор оферты"); ?></a>
           <a href="<?php echo _link("feedback"); ?>"><?php echo $ULang->t("Служба поддержки"); ?></a>
         </div>
 
