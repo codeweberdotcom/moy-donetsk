@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <meta name="description" content="<?php echo $Seo->out(array("page" => "index", "field" => "meta_desc")); ?>">
-    <meta property="og:image" content="<?php echo $settings["logotip"]; ?>">
-
+    <meta property="og:image" content="<?php echo $settings["logotip-mobile"]; ?>">
+	
     <title><?php echo $Seo->out(array("page" => "index", "field" => "meta_title")); ?></title>
     
     <?php include $config["template_path"] . "/head.tpl"; ?>
@@ -32,19 +32,17 @@
                 if($widgetName == "category_slider" && $settings["home_category_slider_status"]){
 
                    ?>
+				   
+
                    <div class="d-none d-lg-block" >
-                   <div class="catalog-category-slider owl-carousel owl-theme mb25" >
+                   <div class="catalog-category-sliders mb25" >
                     <?php
 
                         if(count($getCategoryBoard["category_board_id_parent"][0])){
                           foreach ($getCategoryBoard["category_board_id_parent"][0] as $key => $value) {
                             ?>
-                              <div class="main-category-list-item" >
+                              <a href="<?php echo $CategoryBoard->alias($value["category_board_chain"]); ?>" class="shadow main-category-list-item p-3"  >
 
-                                <div class="main-category-list-icon-circle" style="background-color: <?php echo generateRandomColor(); ?>" ></div>
-
-                                <a href="<?php echo $CategoryBoard->alias($value["category_board_chain"]); ?>">
-                                  
                                   <span class="main-category-list-icon" >
                                     
                                   <img alt="<?php echo $ULang->t( $value["category_board_name"], [ "table" => "uni_category_board", "field" => "category_board_name" ] ); ?>" src="<?php echo Exists($config["media"]["other"],$value["category_board_image"],$config["media"]["no_image"]); ?>">
@@ -52,8 +50,7 @@
                                   </span>
                                   <span class="main-category-list-name" ><?php echo $ULang->t( $value["category_board_name"], [ "table" => "uni_category_board", "field" => "category_board_name" ] ); ?></span>
 
-                                </a>
-                              </div>
+                              </a>
                             <?php
                           }
                         }
@@ -77,7 +74,14 @@
                           <?php 
                           
                              foreach ($data["shops"] as $key => $value) {
+							 
+							 $getUser = findOne("uni_clients", "clients_id=?", array($value["clients_shops_id_user"]));			 
+                             $clients_city_id = $getUser["clients_city_id"];
+					     	 if($_SESSION["geo"]["data"]["city_id"] == $clients_city_id || $_SESSION["geo"]["data"]["city_id"] == NULL){
+							 
                                  include $config["template_path"] . "/include/shop_grid.php";
+								 
+								 }
                              }
                           
                           ?>
