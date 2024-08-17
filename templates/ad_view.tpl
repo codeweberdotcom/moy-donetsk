@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="robots" content="noindex, nofollow">
     <meta name="description" content="<?php echo $Seo->out(["page" => "ad", "field" => "meta_desc"], $data); ?>">
 
     <meta property="og:image" content="<?php echo Exists($config["media"]["big_image_ads"],$data["ad"]["ads_images"][0],$config["media"]["no_image"]); ?>">
@@ -29,6 +29,7 @@
        <?php if( $data["activity_ad"] ){ ?>
     
        <div class="board-view-container" >
+	  
 
           <div class="d-none d-lg-block" >
 
@@ -48,7 +49,6 @@
               </ol>
 
           </nav>
-
           <?php if( $data["ad"]["ads_status"] == 4 || $data["ad"]["ads_status"] == 5 || $data["ad"]["ads_status"] == 2 ){ ?>
             
             <div class="view-list-status mb10" >
@@ -540,7 +540,7 @@
 
     <div class="ajax-container-similar" >
         <div class="container" >
-           <h1 class="h1title mb15 mt35" ><?php if($data["tariff"]['services']['hiding_competitors_ads']){ echo $ULang->t("Другие объявления продавца"); }else{ echo $ULang->t("Объявления из той же категории"); } ?></h1>
+           <h2 class="h1title mb15 mt35" ><?php if($data["tariff"]['services']['hiding_competitors_ads']){ echo $ULang->t("Другие объявления продавца"); }else{ echo $ULang->t("Объявления из той же категории"); } ?></h2>
            <div class="row no-gutters gutters10 ajax-container-similar-content" ></div>            
         </div>
     </div>
