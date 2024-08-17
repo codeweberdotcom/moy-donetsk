@@ -1,6 +1,7 @@
 <?php
 include $config["template_path"] . "/extra/fn.php";
 ?>
+
 <!doctype html>
 <html lang="<?php echo getLang(); ?>">
   <head>
@@ -55,6 +56,7 @@ include $config["template_path"] . "/extra/fn.php";
                 echo $Profile->outUserStories(false,$data["category"]["category_board_id"],'<div class="mt25" ></div>');
 
                 $outParent = $CategoryBoard->outParent($getCategoryBoard, [ "tpl_parent" => '<div class="col-lg-3 col-12 col-md-4 col-sm-4" ><a {ACTIVE} href="{PARENT_LINK}">{PARENT_IMAGE} {PARENT_NAME} {COUNT_AD}</a></div>', "tpl" => '{PARENT_CATEGORY}', "category" => $data["category"]]);
+				
                 ?>
                
                 <?php if( $outParent ){ ?>
@@ -64,13 +66,17 @@ include $config["template_path"] . "/extra/fn.php";
                   <?php 
                     echo $outParent; 
                   ?>
+				  <?php
+				  include_once $_SERVER['DOCUMENT_ROOT'] . '/custom_sub_servises.php';
+				 
+                  ?>
                   </div>
 
                 </div>
                 <?php } ?>
 
                 <?php if($data["seo_alias_category"]){ ?>
-                <div class="slider-list-seo-filters list-seo-filters" >
+                <div class="list-seo-filters" >
                    <?php echo $data["seo_alias_category"]; ?>
                 </div> 
                 <?php } ?>               
@@ -175,7 +181,7 @@ include $config["template_path"] . "/extra/fn.php";
           
           <div class="modal-ads-subscriptions-block-1" >
 
-              <h4> <strong><?php echo $ULang->t("Подписка на объявления"); ?></strong> </h4>
+              <div class="h4"> <strong><?php echo $ULang->t("Подписка на объявления"); ?></strong> </div>
 
               <p><?php echo $ULang->t("Новые объявления будут приходить на электронную почту"); ?></p>
               
@@ -214,7 +220,7 @@ include $config["template_path"] . "/extra/fn.php";
 
               <i class="las la-check checkSuccess"></i>
 
-              <h3> <strong><?php echo $ULang->t("Подписка оформлена"); ?></strong> </h3>
+              <div class="h3"> <strong><?php echo $ULang->t("Подписка оформлена"); ?></strong> </div>
 
               <p><?php echo $ULang->t("Если вы захотите отписаться от рассылки - просто нажмите на соответствующую кнопку в тексте письма, либо перейдите в раздел"); ?> <a href="<?php if($_SESSION["profile"]["id"]){ echo _link( "user/" . $_SESSION["profile"]["data"]["clients_id_hash"] . "/subscriptions" ); }else{ echo _link( "auth" ); } ?>"><?php echo $ULang->t("управления подписками"); ?></a></p>
 
