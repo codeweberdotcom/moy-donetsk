@@ -252,10 +252,7 @@
           </div>
           <?php } ?>
           
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" name="filter[vip]" <?php if($data["param_filter"]["filter"]["vip"]){ echo 'checked=""'; } ?> id="flvip" value="1" >
-              <label class="custom-control-label" for="flvip"><?php echo $ULang->t("VIP"); ?></label>
-          </div>
+
 
         <?php if( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_booking"] ){ ?>
 

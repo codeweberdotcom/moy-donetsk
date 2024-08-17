@@ -32,7 +32,7 @@ if($parent_value["ads_filters_type"] == "select" || $parent_value["ads_filters_t
 
          $return .= ' 
 
-            <div class="catalog-list-options toggle-list-options filter-items '.$statusOpenItems.'" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'"  data-ids="'.$this->idsBuild($parent_value["ads_filters_id"],$getFilters).'" >
+            <div class="catalog-list-options toggle-list-options filter-items catalog-list-options-active '.$statusOpenItems.'" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'"  data-ids="'.$this->idsBuild($parent_value["ads_filters_id"],$getFilters).'" >
                 <span class="catalog-list-options-name" >'.$ULang->t( $parent_value["ads_filters_name"] , [ "table" => "uni_ads_filters", "field" => "ads_filters_name" ] ).' <i class="las la-angle-down"></i></span>
 
                 <div class="catalog-list-options-content" >
@@ -77,7 +77,7 @@ if($parent_value["ads_filters_type"] == "select" || $parent_value["ads_filters_t
 
          $return .= ' 
 
-            <div class="catalog-list-options toggle-list-options filter-items '.$statusOpenItems.'" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'" data-ids="'.$this->idsBuild($parent_value["ads_filters_id"],$getFilters).'" >
+            <div class="catalog-list-options toggle-list-options filter-items '.$statusOpenItems.' catalog-list-options-active" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'" data-ids="'.$this->idsBuild($parent_value["ads_filters_id"],$getFilters).'" >
                 <span class="catalog-list-options-name" >'.$ULang->t( $parent_value["ads_filters_name"] , [ "table" => "uni_ads_filters", "field" => "ads_filters_name" ] ).' <i class="las la-angle-down"></i></span>
 
                 <div class="catalog-list-options-content" >
@@ -114,7 +114,7 @@ if($parent_value["ads_filters_type"] == "select" || $parent_value["ads_filters_t
 
        $return .= '
 
-          <div class="catalog-list-options toggle-list-options filter-items '.$statusOpenItems.'" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'" data-ids="" >
+          <div class="catalog-list-options toggle-list-options catalog-list-options-active filter-items '.$statusOpenItems.'" id-filter="'.$parent_value["ads_filters_id"].'" main-id-filter="'.$id_filter.'" data-ids="" >
               <span class="catalog-list-options-name" >'.$ULang->t( $parent_value["ads_filters_name"] , [ "table" => "uni_ads_filters", "field" => "ads_filters_name" ] ).' <i class="las la-angle-down"></i></span>
 
               <div class="catalog-list-options-content" >

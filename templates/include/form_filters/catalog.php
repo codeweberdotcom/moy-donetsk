@@ -29,10 +29,7 @@
         </div>
         <?php } ?>
 
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" name="filter[vip]" <?php if($data["param_filter"]["filter"]["vip"]){ echo 'checked=""'; } ?> id="flvip" value="1" >
-            <label class="custom-control-label" for="flvip"><?php echo $ULang->t("VIP"); ?></label>
-        </div>
+       
 
         <?php if( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_booking"] ){ ?>
 
@@ -66,7 +63,7 @@
 
     ?>
 
-        <div class="catalog-list-options toggle-list-options catalog-list-options-active" >
+        <div class="catalog-list-options toggle-list-options" >
 
             <span class="catalog-list-options-name" >
             <?php echo $ULang->t("Даты"); ?>  
@@ -88,7 +85,7 @@
 
     <?php }elseif( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_booking_variant"] == 1 ){ ?>
 
-        <div class="catalog-list-options toggle-list-options catalog-list-options-active" >
+        <div class="catalog-list-options toggle-list-options" >
 
             <span class="catalog-list-options-name" >
             <?php echo $ULang->t("Даты"); ?>  
@@ -116,7 +113,7 @@
 if($data["category"]["category_board_id"]){
     if( $getCategoryBoard["category_board_id"][ $data["category"]["category_board_id"] ]["category_board_display_price"] ){ 
     ?>
-    <div class="catalog-list-options toggle-list-options catalog-list-options-active" >
+    <div class="catalog-list-options toggle-list-options" >
 
         <span class="catalog-list-options-name" >
         <?php 
@@ -137,7 +134,7 @@ if($data["category"]["category_board_id"]){
     } 
 }else{
     ?>
-    <div class="catalog-list-options toggle-list-options catalog-list-options-active" >
+    <div class="catalog-list-options toggle-list-options" >
 
         <span class="catalog-list-options-name" >
         <?php echo $ULang->t("Цена"); ?>  
