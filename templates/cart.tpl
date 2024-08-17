@@ -308,7 +308,7 @@
               
                 <div class="cart-empty-icon" >
                   <i class="las la-shopping-basket"></i>
-                  <h5><strong><?php echo $ULang->t('Корзина пуста'); ?></strong></h5>
+                  <div class="h5"><strong><?php echo $ULang->t('Корзина пуста'); ?></strong></div>
                 </div>         
 
             </div>
@@ -325,7 +325,7 @@
             
               <div class="cart-empty-icon" >
                 <i class="las la-check"></i>
-                <h5><strong><?php echo $ULang->t('Заказ успешно оформлен!'); ?></strong></h5>
+                <div class="h5"><strong><?php echo $ULang->t('Заказ успешно оформлен!'); ?></strong></div>
 
                 <a class="btn-custom btn-color-green mt15" href="<?php echo _link("user/" . $_SESSION["profile"]["data"]["clients_id_hash"] . "/orders"); ?>" ><?php echo $ULang->t("Перейти к заказам"); ?></a>
 
