@@ -514,7 +514,7 @@ background: linear-gradient(to bottom right, #7E44FA, #5927C3);
     background-color: #EFEFEF; color: black!important;
 }
 .btn-color-blue{
-    background-color: #917dfa; color: white!important;
+    background-color: #2196f3; color: white!important;
 }
 .btn-color-blue-light{
     background-color: #E5EFFB; color: #007bff!important;
@@ -4359,7 +4359,7 @@ background: linear-gradient(to bottom right, #FF5F95, #DB356D);
     display: inline-block;
 }
 .shop-notsliders .shop-block-control-button{
-    background-color: #917dfa; color: white;
+    background-color: #2196f3; color: white;
 }
 .shop-mobile-counters{
     text-align: center;
@@ -5043,7 +5043,7 @@ figure table{
 .header-wow-sticky-add{
      border-radius: 10px; padding: 0 15px;
      display: inline-flex; height: 100%; align-items: center; justify-content: center;
-     background: linear-gradient(94.43deg, #02AAEC 5.35%, #43E9E4 121.08%); color: white;
+     background: #2196F3; color: white;
 }
 .header-wow-sticky-auth{
      border-radius: 10px; padding: 0 15px;
@@ -5710,11 +5710,11 @@ figure table{
 }
 .card-user-link-profile:hover, .card-user-link-logout:hover{
     opacity: 0.9; text-decoration: none;
-    background-color: #917dfa; color: white!important;
+    background-color: #2196f3; color: white!important;
 }
 .card-user-link-profile{
     text-align: center; padding: 10px 25px; display: inline-block!important; cursor: pointer; border-radius: 10px; border: none; outline: none; font-size: 14px;
-    background-color: #917dfa;
+    background-color: #2196f3;
     color: white!important;
     width: auto;
 }
@@ -7527,7 +7527,7 @@ figure table{
 
 .modal-change-payment-item:hover{
     border: 2px solid #aeaeff; color: white;
-    background-color: #917dfa;
+    background-color: #2196f3;
 }
 
 .item-grid-map.item-grid{
@@ -7645,4 +7645,181 @@ figure table{
 .home-tabs-ads > div.active{
     color: black!important;
     padding-bottom: 5px; border-bottom: 2px solid black;
+}
+
+//Moy-donetsk
+
+.delivery-status-label.status-red {
+  display: none;
+}
+
+.shop-item-card.shop-item-card-bg {
+    height: 100%;
+}
+
+.z-index-1 {
+    z-index: 1!important;
+}
+
+.slider-user-stories-item-name {
+    line-height: 1.2;
+}
+
+.modal-view-user-stories-item-header-user-avatar {
+    min-width: 40px;
+}
+
+.sliders-wide-item img {
+    height: 65px;
+}
+
+.shop-item-card-name {
+    font-size: 18px;
+}
+
+.ad-view-card-user-link-profile {
+    font-size: 14px;
+    line-height: 1.3;
+    display: block;
+}
+
+.predzakaz {
+    background: #FF5722;
+    z-index: 1;
+    bottom: 0;
+    right: 10px;
+}
+
+.top-10 {
+    top: 10px;
+    bottom: auto;
+}
+
+.item-grid span.mini-avatar-img, .item-grid span.mini-avatar-img img, .item-list-img a span.mini-avatar-img, .item-list-img a span.mini-avatar-img img {
+    width: 35px;
+    height: 35px;
+}
+
+
+.ajax-container-similar h2 {
+    margin-top: 0px !important;
+}
+
+.item-label-seo-filter a {
+    border: 1px solid #55555559;
+    text-align: center;
+    padding: 3px 10px;
+    margin: 0;
+    border-radius: 3px;
+    color: #212529;
+    font-weight: 400;
+}
+
+.item-label-seo-filter {
+    display: inline-block;
+    margin-right: 10px!important;
+    margin-bottom: 10px!important;
+}
+
+.item-label-seo-filter a:hover {
+    text-decoration: none;
+    border-color: #212529;
+}
+
+.ad-status-label-7 {
+    background-color: #f55050;
+    color: white;
+}
+
+.bottom-0{
+bottom: 0;
+}
+
+
+
+.uni-select, .form-control, .ads-create-input, .uni-select-list, input.ajax-live-search {
+    border: 1px solid #dfdfdf !important;
+}
+
+label.mobile-label-menu-category {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+    .main-search-results {
+        top: 110px !important;     
+    }
+}
+
+.item-grid-img a, .item-list-img a {
+    height: 51px!important; 
+    text-decoration: none;
+}
+
+.header-wow-top {
+    padding: 5px 0;
+}
+
+.header-wow-top {
+    background: #066ec1;
+}
+.header-wow-top-list a {
+    color: #fff !important;
+}
+
+.shop-item-card.shop-item-card-bg {
+    text-align: left;
+}
+
+.shop-item-card-name {
+    font-size: 16px;
+}
+.shop-item-card-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.main-category-list-icon img {
+    height: 60px;
+}
+
+.catalog-category-sliders {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+a.shadow.main-category-list-item {
+ min-height: 145px;
+    align-content: center;
+}
+
+a.shadow.main-category-list-item:hover {
+    box-shadow: 0 1rem 1rem rgb(0 0 0 / 25%) !important;
+}
+
+.shop-item-card-list-logo-bg {
+    min-height: 207px;
+}
+
+.header-button-menu-catalog, .header-wow-sticky-add, a.shadow.main-category-list-item, .header-wow-sticky-auth, .sliders-wide-item, .shop-item-card, .article-grid-slider, .item-grid-img, .button-style-custom, .ads-view-photo-bg-gray, .btn-custom, .form-search-subscribe, .sidebar-filter, .shop-category-list, .blog-category-list, .shop-item-card-list-logo-bg {
+    border-radius: 10px 0;
+}
+
+.mobile-menu-items {
+    height: 100%;
+    padding: 10px;
+    width: 120px!important;
+    border-radius: 10px 0;
+    align-content: center;
+}
+
+.header-wow-mobile-category-name {
+    word-break: normal;
+}
+
+.header-wow-top-list-admin {
+    align-content: center;
 }
