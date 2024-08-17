@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+Host: http://moy-donetsk.ru
+Sitemap: http://moy-donetsk.ru/sitemap.xml
+Disallow: /media/
+Disallow: /temp/
+Disallow: /templates/
+Disallow: /*?*
