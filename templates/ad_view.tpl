@@ -297,7 +297,7 @@
 
                    <?php if($data["ad"]["ads_text"]){ ?>
 
-                     <h5 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Описание"); ?></h5>
+                     <h2 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Описание"); ?></h2>
 
                      <div class="word-break mb20" ><?php echo nl2br($data["ad"]["ads_text"]); ?> </div>
 
@@ -305,7 +305,7 @@
 
                    <?php if($data["ad"]["ads_condition_status"]){ ?>
 
-                     <h5 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Состояние"); ?></h5>
+                     <h2 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Состояние"); ?></h2>
 
                      <div class="word-break mb20" ><?php echo $ULang->t("Новое"); ?></div>
 
@@ -313,7 +313,7 @@
 
                    <?php if($data["properties"]){ ?>
 
-                     <h5 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Характеристики"); ?></h5>
+                     <h2 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Характеристики"); ?></h2>
 
                      <div class="list-properties mb20" >
                        <div class="list-properties-display" >
@@ -325,7 +325,7 @@
 
                    <?php if($settings["main_type_products"] == 'physical'){ ?>
 
-                   <h5 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Местоположение"); ?></h5>
+                   <h2 class="ad-view-subtitle-bold" ><?php echo $ULang->t("Местоположение"); ?></h2>
 
                    <?php echo $Ads->outAdAddress($data); ?>
                    
