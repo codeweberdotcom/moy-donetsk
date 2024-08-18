@@ -73,14 +73,14 @@
                                        <p><strong><?php echo $ULang->t("Бесплатно"); ?></strong> <?php if($value['services_tariffs_days']){ ?><span><?php echo $ULang->t("на"); ?> <?php echo $value['services_tariffs_days']; ?> <?php echo ending($value['services_tariffs_days'],$ULang->t('день'),$ULang->t('дня'),$ULang->t('дней')); ?></span><?php }else{ ?> <span><?php echo $ULang->t('на неограниченный срок'); ?></span> <?php } ?></p>
                                        <?php } ?>
                                        <p><?php echo $ULang->t($value['services_tariffs_desc']); ?></p>
-                                       <?php if($value['services_tariffs_bonus'] || $services){ ?>
+                                       <?php if($value['services_tariffs_bonus'] || count($services)){ ?>
                                        <hr>
                                        <ul>
                                            <?php if($value['services_tariffs_bonus']){ ?>
                                            <li><span class="user-tariff-box-item-service-icon" ><i class="las la-plus"></i></span><span class="user-tariff-box-item-service-name" ><strong><?php echo $Main->price($value['services_tariffs_bonus']); ?></strong> <?php echo $ULang->t("на бонусный счет"); ?></span></li>
                                            <?php
                                            }
-                                           if($services){
+                                           if(count($services)){
                                                foreach ($services as $service_id) {
                                                    $checklist = findOne('uni_services_tariffs_checklist', 'services_tariffs_checklist_id=?', [$service_id]);
                                                    ?>
