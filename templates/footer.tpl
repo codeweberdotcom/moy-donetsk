@@ -1062,7 +1062,7 @@ if($route_name == "catalog" || $route_name ==  "index" || $route_name ==  "ad_vi
 
 
 <div class="container catalog-subcategory mb15 mt25">
-<h4 class="mb20 mt20"> <strong> Объявления в других городах </strong> </h4>
+<h3 class="mb20 mt20 h4"> <strong> Объявления в других городах </strong> </h3>
     <div class="row">
 	 <div class="col-lg-2 col-6 col-md-4 col-sm-4">
             <a href="/donetsk">Донецк</a>
