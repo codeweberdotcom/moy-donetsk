@@ -593,7 +593,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-          <h4> <strong><?php echo $ULang->t("Подключите услуги, чтобы продать свой товар быстрее"); ?></strong> </h4>
+          <div class="h4"> <strong><?php echo $ULang->t("Подключите услуги, чтобы продать свой товар быстрее"); ?></strong> </div>
 
           <div class="mt40" ></div>
           
