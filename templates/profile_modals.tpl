@@ -565,7 +565,7 @@
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
       
       <div class="modal-confirm-content" >
-          <h4><?php echo $ULang->t("Снять с публикации"); ?></h4>   
+          <div class="h4"><?php echo $ULang->t("Снять с публикации"); ?></div>   
           <p><?php echo $ULang->t("Выберите причину"); ?></p>         
       </div>
 
@@ -585,7 +585,7 @@
       <span class="modal-custom-close" ><i class="las la-times"></i></span>
       
       <div class="modal-confirm-content" >
-          <h4><?php echo $ULang->t("Вы действительно хотите удалить объявление?"); ?></h4> 
+           <div class="h4"><?php echo $ULang->t("Вы действительно хотите удалить объявление?"); ?></div> 
           <p><?php echo $ULang->t("Ваше объявление будет безвозвратно удалено"); ?></p>           
       </div>
 
