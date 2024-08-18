@@ -390,7 +390,7 @@
 
                    </div>
 
-                    <h4 class="mb20 mt40" > <strong> <?php echo $ULang->t("Отзывы"); ?> </strong> </h4>
+                    <h3 class="mb20 mt40" > <strong> <?php echo $ULang->t("Отзывы"); ?> </strong> </h3>
 
                     <?php
                     if($data["reviews"]){
@@ -434,7 +434,7 @@
                    
                    <noindex>
                     
-                   <h4 class="mb20 mt20" > <strong> <?php echo $ULang->t("Комментарии"); ?> </strong> </h4>
+                   <h3 class="mb20 mt20" > <strong> <?php echo $ULang->t("Комментарии"); ?> </strong> </h3>
                    
                    <?php 
 
