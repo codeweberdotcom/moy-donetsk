@@ -32,7 +32,7 @@
                 if($widgetName == "category_slider" && $settings["home_category_slider_status"]){
 
                    ?>
-				   
+			        	   <h1 style="font-size: 1.75rem;" class="mb25 mt35" > <strong><?php echo $data["h1"]; ?></strong> </h1>
 
                    <div class="d-none d-lg-block" >
                    <div class="catalog-category-sliders mb25" >
@@ -269,7 +269,7 @@
 
           </div>
 
-          <h1 style="font-size: 1.75rem;" class="mb25 mt35" > <strong><?php echo $data["h1"]; ?></strong> </h1>
+          
 
           <div class="schema-text" >
              <?php if($data["seo_text"]){ ?> <div class="mt35" > <?php echo $data["seo_text"]; ?> </div> <?php } ?>
