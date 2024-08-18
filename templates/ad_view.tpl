@@ -626,7 +626,7 @@
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
           
           <div class="modal-confirm-content" >
-              <h4><?php echo $ULang->t("Снять с публикации"); ?></h4>   
+              <div class="h4"><?php echo $ULang->t("Снять с публикации"); ?></div>   
               <p><?php echo $ULang->t("Выберите причину"); ?></p>         
           </div>
 
@@ -646,7 +646,7 @@
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
           
           <div class="modal-confirm-content" >
-              <h4><?php echo $ULang->t("Вы действительно хотите удалить объявление?"); ?></h4> 
+              <div class="h4"><?php echo $ULang->t("Вы действительно хотите удалить объявление?"); ?></div> 
               <p><?php echo $ULang->t("Ваше объявление будет безвозвратно удалено"); ?></p>           
           </div>
 
@@ -670,7 +670,7 @@
           <div class="modal-top-views-content" >
 
              <div class="modal-top-views-content-title" >
-               <h4> <strong><?php echo $ULang->t("Поднятие объявления в ленте"); ?></strong> </h4>
+               <div class="h4"> <strong><?php echo $ULang->t("Поднятие объявления в ленте"); ?></strong> </div>
                <p><?php echo $ULang->t("Воспользуйтесь услугой - поднятие объявление в ленте и ваше объявление будет на много чаще показываться в каталоге чем у остальных!"); ?></p>
              </div>
             
@@ -696,7 +696,7 @@
 
           <div class="modal-auction-content" >
 
-            <h4> <strong><?php echo $ULang->t("Укажите ставку"); ?></strong> </h4>
+            <div class="h4"> <strong><?php echo $ULang->t("Укажите ставку"); ?></strong> </div>
 
             <input type="number" name="rate" class="form-control" >
 
@@ -722,7 +722,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-          <h4> <strong><?php echo $ULang->t("Ставки больше не принимаются"); ?></strong> </h4>
+          <div class="h4"> <strong><?php echo $ULang->t("Ставки больше не принимаются"); ?></strong> </div>
 
           <p class="mt15" ><?php echo $ULang->t("Сумма ставок достигла лимита, теперь вы только можете купить по существующей цене."); ?></p>
 
@@ -744,7 +744,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-          <h4> <strong><?php echo $ULang->t("Ваша ставка принята!"); ?></strong> </h4>
+         <div class="h4"> <strong><?php echo $ULang->t("Ваша ставка принята!"); ?></strong> </div>
 
           <p class="mt15" ><?php echo $ULang->t("Если ставка будет перебита, вы получите E-mail уведомление. Новую ставку вы можете сделать в любое время!"); ?></p>
 
@@ -768,7 +768,7 @@
 
           <div class="modal-auction-users-content" >
 
-            <h4> <strong><?php echo $ULang->t("Список ставок"); ?></strong> </h4>
+            <div class="h4"> <strong><?php echo $ULang->t("Список ставок"); ?></strong> </div>
 
             <div class="mt30" ></div>
 
@@ -821,7 +821,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-            <h4> <strong><?php echo $ULang->t("Отказ от покупки"); ?></strong> </h4>
+            <div class="h4"> <strong><?php echo $ULang->t("Отказ от покупки"); ?></strong> </div>
 
             <p class="mt15" ><?php echo $ULang->t("Если победитель аукциона отказался по каким то причинам от покупки товара, то вы можете удалить его ставку и исключить из аукциона. Новый победитель будет выбран тот который шел за этим участником!"); ?></p>
             
@@ -842,7 +842,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-            <h4> <strong><?php echo $ULang->t("Подтверждение заказа"); ?></strong> </h4>
+            <div class="h4"> <strong><?php echo $ULang->t("Подтверждение заказа"); ?></strong> </div>
 
             <p class="mt15" ><?php echo $ULang->t("После подтверждения заказ объявление будет зарезервировано за Вами, договоритесь с продавцом в чате или по телефону о способе передачи и оплате товара."); ?></p>
             
@@ -863,7 +863,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-            <h4 class="text-center" > <strong><?php echo $ULang->t("Поделиться"); ?></strong> </h4>
+            <div class="text-center h4" > <strong><?php echo $ULang->t("Поделиться"); ?></strong> </div>
 
             <div class="text-center mt15" >
                <div><label><?php echo $ULang->t("Соц.сети"); ?></label></div>
@@ -885,7 +885,7 @@
 
           <span class="modal-custom-close" ><i class="las la-times"></i></span>
 
-            <h4> <strong><?php echo $ULang->t("Как проходит онлайн-показ"); ?></strong> </h4>
+            <div class="h4"> <strong><?php echo $ULang->t("Как проходит онлайн-показ"); ?></strong> </div>
 
             <p class="mt15" ><?php echo $ULang->t("Продавец проведёт показ по видеосвязи: покажет все детали и ответит на вопросы. Договоритесь о времени и приложении, в котором будет удобно пообщаться."); ?></p>
 
