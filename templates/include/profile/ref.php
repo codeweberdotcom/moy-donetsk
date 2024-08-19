@@ -31,7 +31,7 @@ if(count($data["referrals"])){
 
         $getRefUser = findOne('uni_clients', 'clients_id=?', [$value['id_user_referral']]);
 
-        $getAwardTotal = getOne("select sum(clients_reff_award_amount) as total from uni_clients_reff_award where clients_reff_award_id_user_referrer=? and clients_reff_award_id_user_referral=?", [$_SESSION['profile']['id'],$value['id_user_referral']])['total'];
+        $getAwardTotal = getOne("select sum(amount) as total from uni_clients_ref_award where id_user_referrer=? and id_user_referral=?", [$_SESSION['profile']['id'],$value['id_user_referral']])['total'];
 
         ?>
 
