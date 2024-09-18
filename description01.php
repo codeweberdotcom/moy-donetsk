@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,24 @@
         .container {
             margin-top: 50px;
         }
+
         .result {
             margin-top: 20px;
         }
+
         .form-control {
             resize: none;
         }
+
         .preformatted {
-            white-space: pre-wrap; /* Обеспечивает перенос строк и отображение пробелов */
-            word-wrap: break-word; /* Переносит слова на новую строку при необходимости */
+            white-space: pre-wrap;
+            /* Обеспечивает перенос строк и отображение пробелов */
+            word-wrap: break-word;
+            /* Переносит слова на новую строку при необходимости */
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-center">Обработка текста</h1>
@@ -85,4 +92,5 @@
         }
     </script>
 </body>
+
 </html>

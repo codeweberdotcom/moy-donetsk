@@ -125,11 +125,7 @@ include $config["template_path"] . "/extra/fn.php";
                          </div>
 
                          <?php if($settings["main_type_products"] == 'physical'){ ?>
-                         <div>
-
-                          <a class="catalog-sort-link-button" data-tippy-placement="bottom" title="<?php echo $ULang->t("Поиск на карте"); ?>" href="<?php echo $Ads->linkMap( $data ); ?>"><i class="las la-map-marked-alt"></i> </a>
-
-                         </div> 
+                         
                          <?php } ?>
 
                          <div>
@@ -140,6 +136,12 @@ include $config["template_path"] . "/extra/fn.php";
 
                          <div data-view="grid" class="catalog-ad-view <?php if($_SESSION["catalog_ad_view"] == "grid" || !$_SESSION["catalog_ad_view"]){ echo 'active'; } ?>" > <i class="las la-border-all"></i> </div>
                          <div data-view="list" class="catalog-ad-view <?php if($_SESSION["catalog_ad_view"] == "list"){ echo 'active'; } ?>" > <i class="las la-list"></i> </div>
+						 <div>
+
+                          <a class="catalog-sort-link-button btn-custom-mini btn-color-blue" data-tippy-placement="bottom" title="<?php echo $ULang->t("Поиск на карте"); ?>" href="<?php echo $Ads->linkMap( $data ); ?>"><i class="las la-map-marked-alt"></i>На карте </a>
+
+                         </div> 
+						 
 
                       </div>
 
