@@ -7823,3 +7823,8 @@ a.shadow.main-category-list-item:hover {
 .header-wow-top-list-admin {
     align-content: center;
 }
+
+a.catalog-sort-link-button i {
+    font-size: 20px;
+    margin-right: 5px;
+}
