@@ -50,7 +50,7 @@ if ($session_cityid === $clients_city_id || $session_cityid === NULL) {
 
             <div class="shop-item-card-list-desc"> <?php echo substr($value["clients_shops_desc"], 0, strrpos(substr($value["clients_shops_desc"], 0, 500), ' ')); ?> </div>
 
-            <a class="mt-2 btn-custom btn-color-blue" href="tel:+<?php echo $inputphone; ?>"><?php echo $formatted; ?></a>
+            <a class="mt-2 btn-custom-mini btn-color-blue" href="tel:+<?php echo $inputphone; ?>"><?php echo $formatted; ?></a>
 
 
           <?php } ?>
